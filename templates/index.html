@@ -1,0 +1,182 @@
+{% extends 'base.html' %}
+
+{% block homepage %}
+
+<!-- slideshow -->
+
+<section id="heading">
+  {% if lang == "English" %}
+  <div class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item slideShow active" data-bs-interval="2500">
+        <div class="linear"></div>
+        <div class="caption">
+          <h3>Get informed decisions about your farming strategy.</h3>
+        </div>
+        <img src="https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5" class="" alt="slideShow-img">
+      </div>
+
+      <div class="carousel-item slideShow" data-bs-interval="2500">
+        <div class="linear"></div>
+        <div class="caption">
+          <h3>Get informed decisions about your farming strategy.</h3>
+        </div>
+        <img src="https://cordis.europa.eu/docs/article/images/2023-06/444394.jpg" class="" alt="slideShow-img">
+      </div>
+      
+      <div class="carousel-item slideShow" data-bs-interval="2500">
+        <div class="linear"></div>
+        <div class="caption">
+          <h3>Get informed decisions about your farming strategy.</h3>
+        </div>
+        <img src="https://aiworldschool.com/wp-content/uploads/2021/04/vertical-farming.png" class="" alt="slideShow-img">
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <div class="carousel slide carousel-fade" data-bs-ride="carousel">
+    <div class="carousel-inner">
+      <div class="carousel-item slideShow active" data-bs-interval="2500">
+        <div class="linear"></div>
+        <div class="caption">
+          <h3>अपनी खेती की रणनीति के बारे में जानकारीपूर्ण निर्णय लें।</h3>
+        </div>
+        <img src="https://images.unsplash.com/photo-1516253593875-bd7ba052fbc5" class="" alt="slideShow-img">
+      </div>
+
+      <div class="carousel-item slideShow" data-bs-interval="2500">
+        <div class="linear"></div>
+        <div class="caption">
+          <h3>अपनी खेती की रणनीति के बारे में जानकारीपूर्ण निर्णय लें।</h3>
+        </div>
+        <img src="https://cordis.europa.eu/docs/article/images/2023-06/444394.jpg" class="" alt="slideShow-img">
+      </div>
+
+      <div class="carousel-item slideShow" data-bs-interval="2500">
+        <div class="linear"></div>
+        <div class="caption">
+          <h3>अपनी खेती की रणनीति के बारे में जानकारीपूर्ण निर्णय लें।</h3>
+        </div>
+        <img src="https://aiworldschool.com/wp-content/uploads/2021/04/vertical-farming.png" class="" alt="slideShow-img">
+      </div>
+    </div>
+  </div>
+  {% endif %}
+</section>
+
+<!-- about -->
+
+<section id="about">
+  {% if lang == "English" %}
+    <h1>ABOUT</h1>
+    <div class="aboutContainer">
+      <div class="aboutCard">
+        <img src="https://miro.medium.com/v2/1*8GLFTX7FkOEtcHXLouu87g.jpeg" alt="about-img1">
+        <!-- <img src="https://imageio.forbes.com/specials-images/imageserve/602d48193da3d0409611fdac/0x0.jpg" alt="about-img1"> -->
+        <p>We use state-of-the-art machine learning and deep learning technologies to help you guide through the entire
+          farming process. Make informed decisions to understand the demographics of your area, understand the factors
+          that affect your crop and keep them healthy for a super awesome successful yield.</p>
+      </div>
+      <div class="aboutCard">
+        <img src="https://editor.analyticsvidhya.com/uploads/96804AI_Image_7.PNG" alt="about-img2">
+        <div>
+          <h5>Here are some questions we'll answer</h5>
+          <ol>
+            <li>What crop to plant here?</li>
+            <li>What fertilizer to use?</li>
+            <li>Which disease do your crop have?</li>
+            <li>How to cure the disease?</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+  {% else %}
+    <h1>के बारे में</h1>
+    <div class="aboutContainer">
+      <div class="aboutCard">
+        <img src="https://miro.medium.com/v2/1*8GLFTX7FkOEtcHXLouu87g.jpeg" alt="about-img1">
+        <!-- <img src="https://imageio.forbes.com/specials-images/imageserve/602d48193da3d0409611fdac/0x0.jpg" alt="about-img1"> -->
+        <p>संपूर्ण कृषि प्रक्रिया में आपका मार्गदर्शन करने में सहायता के लिए हम अत्याधुनिक मशीन लर्निंग और गहन शिक्षण
+          प्रौद्योगिकियों का उपयोग करते हैं। अपने क्षेत्र की जनसांख्यिकी को समझने, अपनी फसल को प्रभावित करने वाले कारकों
+          को समझने
+          और एक शानदार सफल उपज के लिए उन्हें स्वस्थ रखने के लिए सूचित निर्णय लें।</p>
+      </div>
+      <div class="aboutCard">
+        <div>
+          <h5>यहां कुछ प्रश्न हैं जिनका हम उत्तर देंगे|</h5>
+          <ol>
+            <li>यहां कौन सी फसल लगानी है?</li>
+            <li>कौन सा उर्वरक उपयोग करें?</li>
+            <li>आपकी फसल में कौन सा रोग है?</li>
+            <li>बीमारी का इलाज कैसे करें?</li>
+          </ol>
+        </div>
+        <img src="https://editor.analyticsvidhya.com/uploads/96804AI_Image_7.PNG" alt="about-img2">
+      </div>
+    </div>
+  {% endif %}
+</section>
+
+
+<!-- services -->
+
+<section id="services">
+  {% if lang == "English" %}
+  <h1>SERVICES</h1>
+  <div class="services">
+    <a href="/fertilizers?lang={{lang}}">
+      <div>
+        <img src="https://cdn.cdnparenting.com/articles/2021/07/16191322/380433403.webp" alt="crops-img">
+        <h5>FERTILIZERS</h5>
+        <p style="color: black;">Recommendation about the type of fertilizer best suited for the particular soil and the
+          recommended crop.</p>
+      </div>
+    </a>
+    <a href="/crops?lang={{lang}}">
+      <div>
+        <img src="https://images.unsplash.com/photo-1511735643442-503bb3bd348a" alt="crops-img">
+        <h5>CROPS</h5>
+        <p style="color: black;">Recommendation about the type of crops to be cultivated which is best suited for the
+          respective conditions.
+        </p>
+      </div>
+    </a>
+    <a href="/disease?lang={{lang}}">
+      <div>
+        <img src="https://cdn.cdnparenting.com/articles/2021/07/19122940/1809969313.webp" alt="crops-img">
+        <h5>DISEASE</h5>
+        <p style="color: black;">Predicting the name and causes of crop disease and suggestions to cure it.</p>
+      </div>
+    </a>
+  </div>
+  {% else %}
+  <h1>सेवाएं</h1>
+  <div class="services">
+    <a href="/fertilizers?lang={{lang}}">
+      <div>
+        <img src="https://cdn.cdnparenting.com/articles/2021/07/16191322/380433403.webp" alt="crops-img">
+        <h5>उर्वरकों</h5>
+        <p style="color: black;">
+          विशेष मिट्टी और अनुशंसित फसल के लिए सबसे उपयुक्त उर्वरक के प्रकार के बारे में सिफारिश।</p>
+      </div>
+    </a>
+    <a href="/crops?lang={{lang}}">
+      <div>
+        <img src="https://images.unsplash.com/photo-1511735643442-503bb3bd348a" alt="crops-img">
+        <h5>फसलें</h5>
+        <p style="color: black;">
+          खेती की जाने वाली फसलों के प्रकार के बारे में सिफ़ारिश जो संबंधित परिस्थितियों के लिए सबसे उपयुक्त है।</p>
+      </div>
+    </a>
+    <a href="/disease?lang={{lang}}">
+      <div>
+        <img src="https://cdn.cdnparenting.com/articles/2021/07/19122940/1809969313.webp" alt="crops-img">
+        <h5>बीमारी</h5>
+        <p style="color: black;">फसल रोग के नाम और कारणों की भविष्यवाणी करना और इसे ठीक करने के सुझाव देना</p>
+      </div>
+    </a>
+  </div>
+  {% endif %}
+</section>
+
+{% endblock homepage %}

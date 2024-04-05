@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block diseases %}
+
+<section id="disease-section">
+    {% if lang == "English" %}
+    <h2>Disease Predictor</h2>
+    <div class="form-container">
+        <form method="post" enctype="multipart/form-data" >
+            <div class="disease-container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group" style="width: 50%; margin: 0px auto 30px auto;">
+                            <label>Please Upload The Image</label>
+                            <input class="form-control" type="file" name="file" id="inputfile"
+                                onchange="img_preview(event)">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12" style="text-align: center;">
+                    <img src="https://placehold.co/600x400?text=Image+Preview" id="img-preview" alt="image-preview"
+                        width="40%" height="40%" style="border-radius: 10px;">
+                </div>
+                <div style="margin-top: 30px;" class="form-submit">
+                    <button class="btn btn-outline-danger btn-lg" type="submit">Predict</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    </div>
+
+    <script type="text/javascript">
+        function img_preview(e) {
+            var reader = new FileReader();
+            reader.onload = function () {
+                var output = document.getElementById('img-preview')
+                output.src = reader.result;
+            }
+            reader.readAsDataURL(e.target.files[0]);
+        }
+    </script>
+    {% else %}
+    <h2>रोग भविष्यवक्ता</h2>
+    <div class="form-container">
+        <form method="post" enctype="multipart/form-data" >
+            <div class="disease-container">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group" style="width: 50%; margin: 0px auto 30px auto;">
+                            <label>कृपया छवि अपलोड करें</label>
+                            <input class="form-control" type="file" name="file" id="inputfile"
+                                onchange="img_preview(event)">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12" style="text-align: center;">
+                    <img src="https://placehold.co/600x400?text=Image+Preview" id="img-preview" alt="image-preview"
+                        width="40%" height="40%" style="border-radius: 10px;">
+                </div>
+                <div style="margin-top: 30px;" class="form-submit">
+                    <button class="btn btn-outline-danger btn-lg" type="submit">भविष्यवाणी</button>
+                </div>
+            </div>
+        </form>
+    </div>
+    </div>
+
+    <script type="text/javascript">
+        function img_preview(e) {
+            var reader = new FileReader();
+            reader.onload = function () {
+                var output = document.getElementById('img-preview')
+                output.src = reader.result;
+            }
+            reader.readAsDataURL(e.target.files[0]);
+        }
+    </script>
+    {% endif %}
+</section>
+
+{% endblock diseases %}

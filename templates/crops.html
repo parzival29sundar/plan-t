@@ -1,0 +1,213 @@
+{% extends 'base.html' %}
+
+{% block crops %}
+
+<section id="crops-section">
+    {% if lang == "English" %}
+    <h2>CROP PREDICTOR</h2>
+    <div class="form-container">
+        <form action="/cropsResult?lang={{ lang }}" method="post">
+            <div class="crops-container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="nitrogen">Nitrogen</label>
+                            <input type="text" class="form-control" name="nitrogen" id="nitrogen" required
+                                placeholder="Enter the value (example: 50)">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="phosphorus">Phosphorus</label>
+                            <input type="text" class="form-control" name="phosphorus" id="phosphorus" required
+                                placeholder="Enter the value (example: 50)">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="potassium">Potassium</label>
+                            <input type="text" class="form-control" name="potassium" id="potassium" required
+                                placeholder="Enter the value (example: 50)">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="temperature">Temperature</label>
+                            <input type="text" class="form-control" name="temperature" id="temperature" required
+                                placeholder="Enter the temperature in °C">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="humidity">Humidity</label>
+                            <input type="text" class="form-control" name="humidity" id="humidity" required
+                                placeholder="Enter humidity in %">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="pH">pH</label>
+                            <input type="text" class="form-control" name="pH" id="pH" required
+                                placeholder="Enter the pH value">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="rainfall">Rainfall</label>
+                            <input type="text" class="form-control" name="rainfall" id="rainfall" required
+                                placeholder="Enter rainfall in mm">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="form-card">
+                    <label for="state">State</label>
+                    <select required name="state" id="state" onchange="show_cities('city', this.selectedIndex);">
+                    </select>
+                </div>
+                <div class="form-card">
+                    <label for="city">City</label>
+                    <select required name="city" id="city">
+                        <option value="select">Select City</option>
+                    </select>
+                </div> -->
+
+            <div style="margin-top: 30px;" class="form-submit">
+                <button class="btn btn-outline-danger btn-lg" type="submit">Predict</button>
+            </div>
+        </form>
+
+        {% if result %}
+        <div class="crops-result">
+            <h2>Result:</h2>
+            {% if data == "-1" %}
+            <h5>Sorry, we are not able to recommed a proper crop for this enviroment!</h5>
+            {% else %}
+            <div class="crops-result-container">
+                {% for i in range(data[0]|length) %}
+                <div class="crops-result-card">
+                    <img src="{{data[1][i]}}" alt="{{data[0][i]}}-image">
+                    <h6>Recommended crop for cultivation is : <span>{{data[0][i]}}</span></h6>
+                    <!-- <h4>{{data[0][i]}}</h4> -->
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+
+    <script type="text/javascript">
+        show_states();
+    </script>
+    {% else %}
+    <h2>फसल पूर्वानुमानक</h2>
+    <div class="form-container">
+        <form action="/cropsResult?lang={{ lang }}" method="post">
+            <div class="crops-container">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="nitrogen">नाइट्रोजन</label>
+                            <input type="text" class="form-control" name="nitrogen" id="nitrogen" required
+                                placeholder="Enter the value (example: 50)">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="phosphorus">फास्फोरस</label>
+                            <input type="text" class="form-control" name="phosphorus" id="phosphorus" required
+                                placeholder="Enter the value (example: 50)">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="potassium">पोटैशियम</label>
+                            <input type="text" class="form-control" name="potassium" id="potassium" required
+                                placeholder="Enter the value (example: 50)">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="temperature">तापमान</label>
+                            <input type="text" class="form-control" name="temperature" id="temperature" required
+                                placeholder="Enter the temperature in °C">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="humidity">नमी</label>
+                            <input type="text" class="form-control" name="humidity" id="humidity" required
+                                placeholder="Enter humidity in %">
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="pH">पीएच</label>
+                            <input type="text" class="form-control" name="pH" id="pH" required
+                                placeholder="Enter the pH value">
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group">
+                            <label for="rainfall">वर्षा</label>
+                            <input type="text" class="form-control" name="rainfall" id="rainfall" required
+                                placeholder="Enter rainfall in mm">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <div class="form-card">
+                    <label for="state">State</label>
+                    <select required name="state" id="state" onchange="show_cities('city', this.selectedIndex);">
+                    </select>
+                </div>
+                <div class="form-card">
+                    <label for="city">City</label>
+                    <select required name="city" id="city">
+                        <option value="select">Select City</option>
+                    </select>
+                </div> -->
+
+            <div style="margin-top: 30px;" class="form-submit">
+                <button class="btn btn-outline-danger btn-lg" type="submit">भविष्यवाणी</button>
+            </div>
+        </form>
+
+        {% if result %}
+        <div class="crops-result">
+            <h2>Result:</h2>
+            {% if data == "-1" %}
+            <h5>क्षमा करें, हम इस वातावरण के लिए उचित फसल की अनुशंसा नहीं कर पा रहे हैं!</h5>
+            {% else %}
+            <div class="crops-result-container">
+                {% for i in range(data[0]|length) %}
+                <div class="crops-result-card">
+                    <img src="{{data[1][i]}}" alt="{{data[0][i]}}-image">
+                    <h6>खेती के लिए अनुशंसित फसल है : <span>{{data[0][i]}}</span></h6>
+                    <!-- <h4>{{data[0][i]}}</h4> -->
+                </div>
+                {% endfor %}
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+
+    <script type="text/javascript">
+        show_states();
+    </script>
+    {% endif %}
+</section>
+
+{% endblock crops %}

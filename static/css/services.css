@@ -1,0 +1,129 @@
+#crops-section, #fertilizers-section, #disease-section {
+    width: 100%;
+    min-height: calc(100vh - 59px - 65px);
+    background-color: white;
+    padding-bottom: 35px;
+}
+
+#crops-section > h2, #fertilizers-section > h2, #disease-section > h2 {
+    text-align: center;
+    padding: 25px;
+}
+
+.form-container {
+    width: 95%;
+    margin: auto;
+    overflow: hidden;
+}
+
+.form-container > form {
+    width: 100%;
+}
+
+.crops-container, .fertilizers-container, .disease-container {
+    width: 90%;
+    margin: auto;
+}
+
+.form-group {
+    margin: 10px;
+}
+
+.form-group > label {
+    margin: 10px;
+}
+
+.form-submit {
+    width: 100%;
+    text-align: center;
+}
+
+/* ---------------------------------crop result----------------------------------- */
+
+.crops-result, .fertilizer-result {
+    width: 100%;
+    margin-top: 35px;
+    padding-bottom: 55px;
+    border-radius: 10px;
+    background-color: rgb(234, 255, 234);
+}
+
+.crops-result > h2, .fertilizer-result > h2 {
+    padding: 25px 0 0px 25px;
+    text-transform: uppercase;
+}
+
+.crops-result > h5 {
+    text-align: center;
+    padding-bottom: 54px;
+}
+
+.crops-result-container, .fertilizer-result-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-flow: wrap;
+}
+
+.crops-result-card {
+    width: 350px;
+    height: 325px;
+    margin: 15px auto;
+    border-radius: 2%;
+    background-color: white;
+    border: 1px solid rgb(243, 243, 243);
+    box-shadow: 0px 0px 15px 1px rgba(5, 17, 6, 0.277);
+}
+
+.crops-result-card > img {
+    width: 90%;
+    height: 70%;
+    margin: 5% 5% 5% 5%;
+    border-radius: 2%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.crops-result-card > h4 {
+    width: 90%;
+    margin: 0% 5% 5% 5%;
+    text-transform: capitalize;
+    text-align: center;
+}
+
+.crops-result-card > h6 {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0 5%;
+}
+
+.crops-result-card > h6 > span {
+    font-weight: bold;
+    text-transform: capitalize;
+}
+
+/* ---------------------------------fertilizer result----------------------------------- */
+.fertilizer-result-card {
+    width: 70%;
+}
+
+.fertilizer-result-card > h3 {
+    text-align: center;
+    padding-bottom: 25px;
+}
+
+.fertilizer-result-card > h3 > span {
+    text-transform: uppercase;
+    color: rgb(255, 0, 0);
+}
+
+.fertilizer-result-card > h5 {
+    padding-bottom: 10px;
+    text-decoration: underline;
+}
+
+.fertilizer-result-card > ul > li {
+    line-height: 2;
+}

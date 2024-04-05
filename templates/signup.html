@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block login %}
+
+<section id="login">
+    {% if lang == "English" %}
+    <div class="login-container">
+        <div class="login-left">
+            <img src="https://images.unsplash.com/photo-1535379453347-1ffd615e2e08" alt="login-img">
+        </div>
+        <div class="login-right">
+            <h2>Create your account</h2>
+            <p>Already have an account? <a href="/login">Log In</a></p>
+            <form action="" method="POST" style="height: 60%;">
+                {{ form.hidden_tag() }}
+                <input class="form-control" onchange="firstName()" type="text" name="fname" id="fname" required
+                    placeholder="first name">
+                <input class="form-control" onchange="lastName()" type="text" name="lname" id="lname" required
+                    placeholder="last name">
+                {{form.email(class="form-control")}}
+                {{form.password(class="form-control")}}
+                {{form.submit(class="btn btn-outline-primary")}}
+            </form>
+        </div>
+
+    </div>
+    {% else %}
+    <div class="login-container">
+        <div class="login-left">
+            <img src="https://images.unsplash.com/photo-1535379453347-1ffd615e2e08" alt="login-img">
+        </div>
+        <div class="login-right">
+            <h2>अपना खाता बनाएं</h2>
+            <p>क्या आपके पास पहले से एक खाता मौजूद है? <a href="/login">Log In</a></p>
+            <form action="" method="POST" style="height: 60%;">
+                {{ form.hidden_tag() }}
+                <input class="form-control" onchange="firstName()" type="text" name="fname" id="fname" required
+                    placeholder="first name">
+                <input class="form-control" onchange="lastName()" type="text" name="lname" id="lname" required
+                    placeholder="last name">
+                {{form.email(class="form-control")}}
+                {{form.password(class="form-control")}}
+                {{form.submit(class="btn btn-outline-primary")}}
+            </form>
+        </div>
+
+    </div>
+    {% endif %}
+
+</section>
+
+<script type="text/javascript">
+    function firstName() {
+        var name = document.getElementById('fullname');
+        var fname = document.getElementById('fname');
+        var lname = document.getElementById('lname');
+        name.value = fname.value + " " + lname.value;
+    }
+
+    function lastName() {
+        var name = document.getElementById('fullname');
+        var fname = document.getElementById('fname');
+        var lname = document.getElementById('lname');
+        name.value = fname.value + " " + lname.value;
+    }
+</script>
+
+{% endblock login %}

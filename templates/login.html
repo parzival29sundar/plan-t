@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block login %}
+
+<section id="login">
+    {% if lang == "English" %}
+    <div class="login-container">
+        <div class="login-right">
+            <h2>Login to your account</h2>
+            <p>Don't have an account? <a href="/signup">Sign Up</a></p>
+            <form action="" method="POST" style="height: 40%;">
+                {{ form.hidden_tag() }}
+                {{form.email(class="form-control")}}
+                {{form.password(class="form-control")}}
+                {{form.submit(class="btn btn-outline-primary")}}
+            </form>
+        </div>
+        <div class="login-left">
+            <img src="https://images.unsplash.com/photo-1627920769842-6887c6df05ca" alt="login-img">
+        </div>
+    </div>
+    {% else %}
+    <div class="login-container">
+        <div class="login-right">
+            <h2>अपने अकाउंट में लॉग इन करें</h2>
+            <p>कोई खाता नहीं है? <a href="/signup">साइन अप करें</a></p>
+            <form action="" method="POST" style="height: 40%;">
+                {{ form.hidden_tag() }}
+                {{form.email(class="form-control")}}
+                {{form.password(class="form-control")}}
+                {{form.submit(class="btn btn-outline-primary")}}
+            </form>
+        </div>
+        <div class="login-left">
+            <img src="https://images.unsplash.com/photo-1627920769842-6887c6df05ca" alt="login-img">
+        </div>
+    </div>
+    {% endif %}
+</section>
+
+{% endblock login %}

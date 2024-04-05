@@ -1,0 +1,175 @@
+{% extends 'base.html' %}
+
+{% block fertilizers %}
+
+<section id="fertilizers-section">
+    {% if lang == "English" %}
+    <h2>FERTILIZERS REQUIRED</h2>
+    <div class="form-container">
+        <form method="post" action="/fertilizersRequired?lang={{ lang }}">
+            <div class="fertilizers-container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="nitrogen">Nitrogen</label>
+                            <input type="text" class="form-control" id="nitrogen" name="nitrogen"
+                                placeholder="Enter the value (example:50)" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="phosphorus">Phosphorus</label>
+                            <input type="text" class="form-control" id="phosphorus" name="phosphorus"
+                                placeholder="Enter the value (example:50)" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="potassium">Potassium</label>
+                            <input type="text" class="form-control" id="potassium" name="potassium"
+                                placeholder="Enter the value (example:50)" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="cropName">Crop you want to grow</label>
+                            <select class="form-control" required name="cropName" id="cropName"
+                                placeholder="Select a crop">
+                                <option selected>Select crop</option>
+                                <option>rice</option>
+                                <option>maize</option>
+                                <option>chickpea</option>
+                                <option>kidneybeans</option>
+                                <option>pigeonpeas</option>
+                                <option>mothbeans</option>
+                                <option>mungbean</option>
+                                <option>blackgram</option>
+                                <option>lentil</option>
+                                <option>pomegranate</option>
+                                <option>banana</option>
+                                <option>mango</option>
+                                <option>grapes</option>
+                                <option>watermelon</option>
+                                <option>muskmelon</option>
+                                <option>apple</option>
+                                <option>orange</option>
+                                <option>papaya</option>
+                                <option>coconut</option>
+                                <option>cotton</option>
+                                <option>jute</option>
+                                <option>coffee</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px;" class="form-submit">
+                <button class="btn btn-outline-danger btn-lg" type="submit">परिणाम</button>
+            </div>
+        </form>
+
+        {% if परिणाम %}
+        <div class="fertilizer-result">
+            <h2>परिणाम:</h2>
+            {% if data == "-1" %}
+            <h5>Sorry, we are not able to recommed a fertilizer for the given data and selected crop!!</h5>
+            {% else %}
+            <div class="fertilizer-result-container">
+                <div class="fertilizer-result-card">
+                    {{ data }}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+    {% else %}
+    <h2>उर्वरकों की आवश्यकता</h2>
+    <div class="form-container">
+        <form method="post" action="/fertilizersRequired?lang={{ lang }}">
+            <div class="fertilizers-container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="nitrogen">नाइट्रोजन</label>
+                            <input type="text" class="form-control" id="nitrogen" name="nitrogen"
+                                placeholder="Enter the value (example:50)" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="phosphorus">फास्फोरस</label>
+                            <input type="text" class="form-control" id="phosphorus" name="phosphorus"
+                                placeholder="Enter the value (example:50)" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="potassium">पोटैशियम</label>
+                            <input type="text" class="form-control" id="potassium" name="potassium"
+                                placeholder="Enter the value (example:50)" required>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="cropName">वह फसल जिसे आप उगाना चाहते हैं</label>
+                            <select class="form-control" required name="cropName" id="cropName"
+                                placeholder="Select a crop">
+                                <option selected>फसल का चयन करें</option>
+                                <option value="rice">चावल</option>
+                                <option value="maize">मक्का</option>
+                                <option value="chickpea">चना</option>
+                                <option value="kidneybeans">राजमा</option>
+                                <option value="pigeonpeas">अरहर की फलियाँ</option>
+                                <option value="mothbeans">मोठ फलियाँ</option>
+                                <option value="mungbean">मूंग</option>
+                                <option value="blackgram">काला चना</option>
+                                <option value="lentil">मसूर</option>
+                                <option value="pomegranate">अनार</option>
+                                <option value="banana">केला</option>
+                                <option value="mango">आम</option>
+                                <option value="grapes">अंगूर</option>
+                                <option value="watermelon">तरबूज</option>
+                                <option value="muskmelon">खरबूजा</option>
+                                <option value="apple">सेब</option>
+                                <option value="orange">नारंगी</option>
+                                <option value="papaya">पपीता</option>
+                                <option value="coconut">नारियल</option>
+                                <option value="cotton">कपास</option>
+                                <option value="jute">जूट</option>
+                                <option value="coffee">कॉफी</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div style="margin-top: 30px;" class="form-submit">
+                <button class="btn btn-outline-danger btn-lg" type="submit">Result</button>
+            </div>
+        </form>
+
+        {% if result %}
+        <div class="fertilizer-result">
+            <h2>Result:</h2>
+            {% if data == "-1" %}
+            <h5>Sorry, we are not able to recommed a fertilizer for the given data and selected crop!!</h5>
+            {% else %}
+            <div class="fertilizer-result-container">
+                <div class="fertilizer-result-card">
+                    {{ data }}
+                </div>
+            </div>
+            {% endif %}
+        </div>
+        {% endif %}
+    </div>
+    {% endif %}
+</section>
+
+{% endblock fertilizers %}
