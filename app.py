@@ -285,15 +285,27 @@ def requiredFertilizers():
 
         maxx = data[max(data.keys())]
 
+        # if maxx == "N":
+        #     if n < 0: key = 'NHigh'
+        #     else: key = "Nlow"
+        # elif maxx == "P":
+        #     if p < 0: key = 'PHigh'
+        #     else: key = "Plow"
+        # else: 
+        #     if k < 0: key = 'KHigh'
+        #     else: key = "Klow"
+        maxx = data[max(data.keys())]
+
         if maxx == "N":
-            if n < 0: key = 'NHigh'
-            else: key = "Nlow"
+            if n < 0: key = 'Nlow'  # Corrected to 'Nlow'
+            else: key = "NHigh"      # Corrected to 'NHigh'
         elif maxx == "P":
-            if p < 0: key = 'PHigh'
-            else: key = "Plow"
+            if p < 0: key = 'Plow'   # Corrected to 'Plow'
+            else: key = "PHigh"      # Corrected to 'PHigh'
         else: 
-            if k < 0: key = 'KHigh'
-            else: key = "Klow"
+            if k < 0: key = 'Klow'   # Corrected to 'Klow'
+            else: key = "KHigh"      # Corrected to 'KHigh'
+
 
         response = Markup(str(fertilizer_data[key]))
 

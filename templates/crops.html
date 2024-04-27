@@ -12,21 +12,21 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="nitrogen">Nitrogen</label>
-                            <input type="text" class="form-control" name="nitrogen" id="nitrogen" required
+                            <input type="number" min="0" class="form-control" name="nitrogen" id="nitrogen" required
                                 placeholder="Enter the value (example: 50)">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="phosphorus">Phosphorus</label>
-                            <input type="text" class="form-control" name="phosphorus" id="phosphorus" required
+                            <input type="number"  min="0"  class="form-control" name="phosphorus" id="phosphorus" required
                                 placeholder="Enter the value (example: 50)">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="potassium">Potassium</label>
-                            <input type="text" class="form-control" name="potassium" id="potassium" required
+                            <input type="number"   min="0"  class="form-control" name="potassium" id="potassium" required
                                 placeholder="Enter the value (example: 50)">
                         </div>
                     </div>
@@ -35,21 +35,21 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="temperature">Temperature</label>
-                            <input type="text" class="form-control" name="temperature" id="temperature" required
+                            <input type="number" class="form-control" name="temperature" id="temperature" required
                                 placeholder="Enter the temperature in °C">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="humidity">Humidity</label>
-                            <input type="text" class="form-control" name="humidity" id="humidity" required
+                            <input type="number"  min="0"  class="form-control" name="humidity" id="humidity" required
                                 placeholder="Enter humidity in %">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="pH">pH</label>
-                            <input type="text" class="form-control" name="pH" id="pH" required
+                            <input type="number"  min="0"  max="14" class="form-control" name="pH" id="pH" required
                                 placeholder="Enter the pH value">
                         </div>
                     </div>
@@ -58,7 +58,7 @@
                     <div class="col-md-4">
                         <div class="form-group">
                             <label for="rainfall">Rainfall</label>
-                            <input type="text" class="form-control" name="rainfall" id="rainfall" required
+                            <input type="number"  min="0"  class="form-control" name="rainfall" id="rainfall" required
                                 placeholder="Enter rainfall in mm">
                         </div>
                     </div>
