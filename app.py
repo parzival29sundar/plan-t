@@ -133,6 +133,7 @@ def predict_image(img, model=disease_model):
         transforms.ToTensor(),
     ])
     image = Image.open(io.BytesIO(img))
+    image = image.resize((256,256))
     img_t = transform(image)
     img_u = torch.unsqueeze(img_t, 0)
 
@@ -273,9 +274,9 @@ def requiredFertilizers():
         phos = fert[fert['Crop'] == crop]['P'].iloc[0]
         pota = fert[fert['Crop'] == crop]['K'].iloc[0]
 
-        n = abs(nitro - n)
-        p = abs(phos - p)
-        k = abs(pota - k)
+        n = nitro - n
+        p = phos - p
+        k = pota - k
 
         data = {
             n : "N",
@@ -285,27 +286,15 @@ def requiredFertilizers():
 
         maxx = data[max(data.keys())]
 
-        # if maxx == "N":
-        #     if n < 0: key = 'NHigh'
-        #     else: key = "Nlow"
-        # elif maxx == "P":
-        #     if p < 0: key = 'PHigh'
-        #     else: key = "Plow"
-        # else: 
-        #     if k < 0: key = 'KHigh'
-        #     else: key = "Klow"
-        maxx = data[max(data.keys())]
-
         if maxx == "N":
-            if n < 0: key = 'Nlow'  # Corrected to 'Nlow'
-            else: key = "NHigh"      # Corrected to 'NHigh'
+            if n < 0: key = 'NHigh'
+            else: key = "Nlow"
         elif maxx == "P":
-            if p < 0: key = 'Plow'   # Corrected to 'Plow'
-            else: key = "PHigh"      # Corrected to 'PHigh'
+            if p < 0: key = 'PHigh'
+            else: key = "Plow"
         else: 
-            if k < 0: key = 'Klow'   # Corrected to 'Klow'
-            else: key = "KHigh"      # Corrected to 'KHigh'
-
+            if k < 0: key = 'KHigh'
+            else: key = "Klow"
 
         response = Markup(str(fertilizer_data[key]))
 
